@@ -12,11 +12,11 @@ I have defined similar list macros using lis as prefix. &lis_open, &lis_close, &
 All of these are higher order that uses lower order macroes. And these are perfect buildingblocks for implementing primitive lisp operations. (set-car $bx (car $ax)) can be done like this:
 
 {{{
-  $ax &lis_open
-  $ax = &lis_get_car
-  &lis_close
-  $bx &lis_open
-  $ax &lis_set_car
+  $ax &lis_open       ; open array element dictated by $ax
+  $ax = &lis_get_car  ; get the car parameter of the opened array element
+  &lis_close          ; close array (only one address can be opened at the same time)
+  $bx &lis_open       ; open target cell
+  $ax &lis_set_car    ; set the car parameter to the value dictated by $ax
 }}}
 
 On the array side the operations are designed not to clear what is copied, while on the register side everything is destructive. If I wanted to use the car of the scond line twice I need to make local copies before usng the operations. Anyway it looks very simple, but keep in mind that these macroes contains many macroes to do their work. eg. &lis_get_car is created by using a set of lower order macroes, many of which are reused in most of the other lis_`*`-macroes:
