@@ -36,3 +36,5 @@ To the right of FX we have *END* which marks the beginning of another array. Imp
 *END T0 CAR0 CDR0 T1 CAR1 CDR1 ... TN CARN CDRN*
 
 Except for the symbol lookup and the stacks, everything is stored in one or more cons cells. The *type* dictates if the car contains data or a array index.
+
+All of these data structures are then supported by [SupportLibrary A bouch of Macroes] that work on them from the register area.
