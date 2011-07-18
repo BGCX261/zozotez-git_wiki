@@ -35,10 +35,10 @@ On the array side the operations are designed not to clear what is copied, while
 }
 }}}
 
-The `^0` is the key here. It is the address of which the macro was called. For the sake of connsistency. Here is the low order macro definition of &lis_to
+The `^0` is the key here. It is the address of which the macro was called. For the sake of connsistency, here is the low order macro definition of &lis_to
 
 {{{
 {lis_to $lis_crumble
-  [@end to $lis_crumble]
+  [@end to $lis_crumble] ; loop until first lis_crimble which is clear
 }
 }}}
