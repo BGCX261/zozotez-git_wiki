@@ -1,5 +1,5 @@
 #summary The EBF-macroes that supports the datastructures
-#labels Phase-Design
+#labels Phase-Design,Featured
 = Library of EBF-macroes as the core building blocks =
 Previously I wrote about [MemoryDesign the memory design] of Zozotez. The Design of how to arrange memory in BF is a very important matter since there is not support for objects by default. Every data structure other than fixed place cells has to be emulated. With the power of EBF comes macroes with entry-address which is known by the compiler. Thus {{{ $a>>>&copy_a }}} and the definition {{{ {copy_a $a(-^0+^1+)^1(-$a+)} }}} will work on many places in the source without having to create specific macroes.This is what I have done with my high order macroes.
 
