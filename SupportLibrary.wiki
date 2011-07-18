@@ -5,9 +5,9 @@ Previously I wrote about [MemoryDesign the memory design] of Zozotez. The Design
 
 I have defined stack and program stack functions: &stack_push , &stack_pop, &pc_push, &pc_pop which retrieves or pushes to the area in which the macro was called. This means I can get stack contents to any fo my ax-fx register.
 
-I have defined symbol macroes. &sym_open, whichuses the current location as index. &sym_close (which does not take any argument) and &sym_get_<name> and &sym_set_<name> for each of the parameters string_ref, assoc_ref and param_list.
+I have defined symbol macroes. &sym_open, whichuses the current location as index. &sym_close (which does not take any argument) and &sym_get_`<name>` and &sym_set_`<name>` for each of the parameters string_ref, assoc_ref and param_list.
 
-I have defined similar list macros using lis as prefix. &lis_open, &lis_close, &lis_get_<name> and &lis_set_<name>. 
+I have defined similar list macros using lis as prefix. &lis_open, &lis_close, &lis_get_`<name>` and &lis_set_`<name>`. 
 
 All of these are higher order that uses lower order macroes. And these are perfect buildingblocks for implementing primitive lisp operations. (set-car $bx (car $ax)) can be done like this:
 
