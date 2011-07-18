@@ -14,8 +14,8 @@ All of these are higher order that uses lower order macroes. And these are perfe
 {{{
   $ax &lis_open       ; open array element dictated by $ax
   $ax = &lis_get_car  ; get the car parameter of the opened array element
-  &lis_close          ; close array (only one address can be opened at the same time)
-  $bx &lis_open       ; open target cell
+  &lis_close          ; close array (only one address can be opened at a time)
+  $bx &lis_open       ; open target cell whose address is in $bx
   $ax &lis_set_car    ; set the car parameter to the value dictated by $ax
 }}}
 
