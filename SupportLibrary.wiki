@@ -19,7 +19,7 @@ All of these are higher order that uses lower order macroes. And these are perfe
   $ax &lis_set_car
 }}}
 
-Needless to say &lis_get_car is created by using a set of lower order macroes, many of which are reused in most of the other lis_`*`-macroes:
+On the array side the operations are designed not to clear what is copied, while on the register side everything is destructive. If I wanted to use the car of the scond line twice I need to make local copies before usng the operations. Anyway it looks very simple, but keep in mind that these macroes contains many macroes to do their work. eg. &lis_get_car is created by using a set of lower order macroes, many of which are reused in most of the other lis_`*`-macroes:
 
 {{{
 {lis_get_car
@@ -35,4 +35,10 @@ Needless to say &lis_get_car is created by using a set of lower order macroes, m
 }
 }}}
 
-The `^0` is the key here. It is the address of which the macro was called.
+The `^0` is the key here. It is the address of which the macro was called. For the sake of connsistency. Here is the low order macro definition of &lis_to
+
+{{{
+{lis_to $lis_crumble
+  [@end to $lis_crumble]
+}
+}}}
