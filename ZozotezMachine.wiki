@@ -7,7 +7,7 @@ Zozotez has a stack which contains alternate expressions and an address to a lis
   * *address_to_expression* (eval (read))
   * *empty_list_elelemnt_a* (NIL)
 
-The address points to LISP data (eval (read)). Eval, or main-loop as I originally called it, pops thestack to a register and get the type. We have 5 types in Zozotez: 
+The address points to LISP data (eval (read)). Eval, or main-loop as I originally called it, pops the stack to a register and get the type. We have 5 types in Zozotez: 
   * 0 (A) Available cell
   * 1 (N) Number. So far only used to store symbol strings
   * 2 (S) Symbol. car has hash value (symbol array index)
