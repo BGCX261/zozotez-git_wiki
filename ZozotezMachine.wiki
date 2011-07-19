@@ -16,7 +16,10 @@ The address points to LISP data (eval (read)). Eval, or main-loop as I originall
   * 5 (AP) List-apply. Indicates that the expression is a valid function and that arguments are evaluated in normal order.
 
 = BF cannot call a utility-function =
-It just doesn't work. Instead we have eval which is a loop that pops instruction and return-addresses and manipulate the stack every time we need to do eval again. Main handles type 2(S) directly, with 3(L) it creates a new cell of type list-pre-apply and connect it to the rest of the original expression. #'(NIL (read)) and pushed it on the stack. It will use the same return address as the original expression had. It then push the same address again on the stack. this time as an return addres and then it pushed the first element of the original expression, eval, to the stack. It is finished and the loop pops next expression to do and the loop restarts if the stack is not empty.
+It just doesn't work. Instead we have eval which is a loop that pops instruction and return-addresses and manipulate the stack every time we need to do eval again.
+If we need to call a function in the middle of a  function, we split it up in a function-start and a function-end-part where function end-part gets pushed on stack first in function-start at the same time as the other calls to eval in  between. Next will then be those before ending by calling function-end. This can be done recusivly so that the evaluations in between migh themselves push other function-parts on the stack tha also gets processed before function-end.
+
+In Zozotez, Main handles type 2(S) directly, with 3(L) it creates a new cell of type list-pre-apply and connect it to the rest of the original expression. #'(NIL (read)) and pushed it on the stack. It will use the same return address as the original expression had. It then push the same address again on the stack. this time as an return addres and then it pushed the first element of the original expression, eval, to the stack. It is finished and the loop pops next expression to do and the loop restarts if the stack is not empty.
 
 Stack contains now:
   * *address_to_arg0* eval
