@@ -50,7 +50,7 @@ This list should not be very long. I assume that pc-stack contains the program c
  * (argument index) retrieves an argument from stack/registes. Index 0 is the last bound. eg. in ((lambda (x) (+ ((lambda (y) (+ y x)) 10) x) (read)) x will have index 1 when it's free in the innner lambda and 0 when it's bound. eg. ((lambda (x) (+ ((lambda (y) (+ (argument 0) (argument 1))) 10) (argument 0)) (read))
  * cons, type, car, cdr, set-type!, set-car!, set-cdr!, +, -, eq? that works on addresses such that it can create all data types we have. In source we might prefix them such that they don't collide with similar operations meant for pairs only.
  * read-char, write-char
- * if,  lambda, list-lambda, constant->address*, syntax-rules
+ * if,  lambda, list-lambda, constant->address, syntax-rules
 
 Imagine the expression:
 {{{
