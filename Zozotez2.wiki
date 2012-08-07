@@ -1,7 +1,7 @@
 #summary The next generation of this project
 #labels Featured,Phase-Requirements
 
-= Zozotez Next Generation =
+= Zozotez Deux =
 I'm currently thinking of making a lexical scoped Zozotez Compiler. The thought is to implement a close relative to Scheme so that it can be bootstrapped with Scheme and hopefully self contained.
 
 == What is good with the current Zozotez? ==
